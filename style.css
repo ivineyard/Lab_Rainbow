@@ -1,0 +1,54 @@
+    :root {
+        --rainbow-speed: 15s;
+        --rainbow-direction: normal;
+        --bg-color: #ffffff;
+        --text-color: #000000;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .line_contain {
+        height: 100px;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 600px;
+
+        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        background-repeat: repeat-x;
+        background-size: 200% auto;
+        animation: rainbow-animation var(--rainbow-speed) linear infinite;
+        animation-direction: var(--rainbow-direction);
+    }
+
+    @keyframes rainbow-animation {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 800% 0%; }
+    }
+
+    .controls {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .controls label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
